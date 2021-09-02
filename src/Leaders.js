@@ -51,11 +51,11 @@ const Leaders = () => {
     ]
 
     const tleilaxu = [
-        { name: 'Zoal', power: '5'},
-        { name: 'Hidar Fen Ajidica', power: '5'},
-        { name: 'Master Zaaf', power: '5'},
-        { name: 'Wykk', power: '5'},
-        { name: 'Blin', power: '5'}
+        { name: 'Zoal', power: 'X'},
+        { name: 'Hidar Fen Ajidica', power: '4'},
+        { name: 'Master Zaaf', power: '3'},
+        { name: 'Wykk', power: '2'},
+        { name: 'Blin', power: '1'}
     ]
 
     const ixian = [
