@@ -1,0 +1,21 @@
+.total {
+    font-size: 4em;
+}
+
+.player-rolls-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2em;
+}
+
+.roll-number {
+    font-size: 3em;
+}
+
+.randomizer-movement {
+    margin-top: 1em;
+}
+
+.storm-randomizer-wrapper {
+    margin-top: 1em;
+}

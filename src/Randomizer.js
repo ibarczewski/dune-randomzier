@@ -71,7 +71,6 @@ const Randomizer = ({enableCheatCode}) => {
     <div className="randomizer-wrapper">
       <div>Factions to Include</div>
       <div className="house-inputs-wrapper">
-        
         <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeAtreides} onChange={() => setIncludeAtreides(!includeAtreides)}></input><label>House Atreides</label>  </div>
         <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeHarkonnen} onChange={() => setIncludeHarkonnen(!includeHarkonnen)}></input><label>House Harkonnen</label>  </div>
         <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeBeneGesserit} onChange={() => setIncludeBeneGesserit(!includeBeneGesserit)}></input><label>Bene Gesserit</label>  </div>
