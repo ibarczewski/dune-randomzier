@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-expressions */
 import _ from "lodash";
 import { NamePlate } from "./NamePlate";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import './Randomizer.css';
 
-const Randomizer = () => {
+const Randomizer = ({enableCheatCode}) => {
   const [hasShuffled, setHasShuffled] = useState(false);
   const [playerRows, setPlayerRows] = useState({});
   const [includeAtreides, setIncludeAtreides] = useState(true);
@@ -14,6 +15,25 @@ const Randomizer = () => {
   const [includeSpacingGuild, setIncludeSpacingGuild] = useState(true);
   const [includeIxian, setIncludeIxian] = useState(false);
   const [includeTleilaxu, setIncludeTleilaxu] = useState(false);
+
+  const [firstPlayerName, setFirstPlayerName] = useState('');
+  const [secondPlayerName, setSecondPlayerName] = useState('');
+  const [thirdPlayerName, setThirdPlayerName] = useState('');
+  const [fourthPlayerName, setFourthPlayerName] = useState('');
+  const [fifthPlayerName, setFifthPlayerName] = useState('');
+  const [sixthPlayerName, setSixthPlayerName] = useState('');
+
+  useEffect(() => {
+    if (enableCheatCode) {
+      console.log('did i fire', enableCheatCode);
+      setFirstPlayerName('Zoey');
+      setSecondPlayerName('Matt');
+      setThirdPlayerName('Ian');
+      setFourthPlayerName('Ed');
+      setFifthPlayerName('Joel');
+      setSixthPlayerName('Zach');
+    }
+  }, [enableCheatCode]);
 
   const shufflePlayers = () => {
     const factions = [];
@@ -27,7 +47,7 @@ const Randomizer = () => {
     includeIxian ? factions.push("House Ixian") : () => {};
     includeTleilaxu ? factions.push("House Tleilaxu") : () => {};
 
-    const names = _.shuffle(["Zoey", "Ian", "Joel", "Zach", "Matt", "Ed"]);
+    const names = _.shuffle([firstPlayerName, secondPlayerName, thirdPlayerName, fourthPlayerName, fifthPlayerName, sixthPlayerName]);
     const shuffledFactions = _.shuffle(factions);
     const assignments = [];
 
@@ -48,17 +68,29 @@ const Randomizer = () => {
   };
 
   return (
-    <>
-      <div>
-        <input type="checkbox" value="beneGesserit" checked={includeAtreides} onChange={() => setIncludeAtreides(!includeAtreides)}></input><label>House Atreides</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeHarkonnen} onChange={() => setIncludeHarkonnen(!includeHarkonnen)}></input><label>House Harkonnen</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeBeneGesserit} onChange={() => setIncludeBeneGesserit(!includeBeneGesserit)}></input><label>Bene Gesserit</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeFremen} onChange={() => setIncludeFremen(!includeFremen)}></input><label>Fremen</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeEmperor} onChange={() => setIncludeEmperor(!includeEmperor)}></input><label>Emperor</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeSpacingGuild} onChange={() => setIncludeSpacingGuild(!includeSpacingGuild)}></input><label>Spacing Guild</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeIxian} onChange={() => setIncludeIxian(!includeIxian)}></input><label>Ixian</label>  
-        <input type="checkbox" value="beneGesserit" checked={includeTleilaxu} onChange={() => setIncludeTleilaxu(!includeTleilaxu)}></input><label>Tleilaxu</label>
-
+    <div className="randomizer-wrapper">
+      <div>Factions to Include</div>
+      <div className="house-inputs-wrapper">
+        
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeAtreides} onChange={() => setIncludeAtreides(!includeAtreides)}></input><label>House Atreides</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeHarkonnen} onChange={() => setIncludeHarkonnen(!includeHarkonnen)}></input><label>House Harkonnen</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeBeneGesserit} onChange={() => setIncludeBeneGesserit(!includeBeneGesserit)}></input><label>Bene Gesserit</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeFremen} onChange={() => setIncludeFremen(!includeFremen)}></input><label>Fremen</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeEmperor} onChange={() => setIncludeEmperor(!includeEmperor)}></input><label>Emperor</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeSpacingGuild} onChange={() => setIncludeSpacingGuild(!includeSpacingGuild)}></input><label>Spacing Guild</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeIxian} onChange={() => setIncludeIxian(!includeIxian)}></input><label>Ixian</label>  </div>
+        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeTleilaxu} onChange={() => setIncludeTleilaxu(!includeTleilaxu)}></input><label>Tleilaxu</label></div>
+      </div>
+      <div className="player-name-wrapper">
+        <div>Player Names</div>
+        <div className="name-inputs-wrapper">
+        <input className="player-input" value={firstPlayerName} type="text" onChange={event => setFirstPlayerName(event.target.value)}/>
+        <input className="player-input" value={secondPlayerName} type="text" onChange={event => setSecondPlayerName(event.target.value)}/>
+        <input className="player-input" value={thirdPlayerName} type="text" onChange={event => setThirdPlayerName(event.target.value)}/>
+        <input className="player-input" value={fourthPlayerName} type="text" onChange={event => setFourthPlayerName(event.target.value)}/>
+        <input className="player-input" value={fifthPlayerName} type="text" onChange={event => setFifthPlayerName(event.target.value)}/>
+        <input className="player-input" value={sixthPlayerName} type="text" onChange={event => setSixthPlayerName(event.target.value)}/>
+        </div>
       </div>
       
       <button onClick={() => shufflePlayers()}>Shuffle</button>
@@ -80,6 +112,7 @@ const Randomizer = () => {
               position="middle-row"
               name={name}
               faction={faction}
+              key={name}
             ></NamePlate>
           ))}
         </div>
@@ -89,6 +122,7 @@ const Randomizer = () => {
               position="middle-row"
               name={name}
               faction={faction}
+              key={name}
             ></NamePlate>
           ))}
         </div>
@@ -104,7 +138,7 @@ const Randomizer = () => {
         </div>
       </>
       : ''}
-    </>
+    </div>
   );
 };
 

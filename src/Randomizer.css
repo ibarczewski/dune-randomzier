@@ -1,0 +1,36 @@
+.player-name-wrapper {
+    margin-top: 1em;
+}
+
+.name-inputs-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1em;
+    width: 23em;
+}
+
+.house-inputs-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    width: 24em;
+    justify-content: space-evenly;
+}
+
+.player-input {
+    margin-bottom: 1em;
+}
+
+.faction-checkbox {
+    width: 12em;
+}
+
+.randomizer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+}
