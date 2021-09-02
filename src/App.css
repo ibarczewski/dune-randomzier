@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.player-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 2em;
+}
+
+header {
+  font-size: 36px;
+  margin-bottom: 1em;
+}
+

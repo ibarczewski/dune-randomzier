@@ -1,0 +1,16 @@
+.name-plate {
+    border: 1px solid black;
+    width: 10em;
+    margin-bottom: 3em;
+}
+
+.player-name {
+    padding-bottom: 1em;
+    font-weight: bold;
+}
+
+.storm-start { 
+    margin-top: 1em;
+    font-style: italic;
+    font-size: 12px;
+}
