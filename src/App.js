@@ -3,7 +3,7 @@ import { NamePlate } from "./NamePlate";
 import * as _ from "lodash";
 
 function App() {
-  const names = ["Zoey", "Ian", "Joel", "Zach", "Matt", "Ed"];
+  const names = _.shuffle(["Zoey", "Ian", "Joel", "Zach", "Matt", "Ed"]);
   const shuffledFactions = _.shuffle([
     "Atreides",
     "Harkonnen",
