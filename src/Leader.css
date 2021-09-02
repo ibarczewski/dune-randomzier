@@ -1,0 +1,15 @@
+.leader-wrapper {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border: 1px solid black;
+    width: 40%;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-right: .5em;
+    padding-left: .5em;
+}
+
+.house-name {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
