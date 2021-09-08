@@ -69,19 +69,21 @@ const Randomizer = ({enableCheatCode}) => {
 
   return (
     <div className="randomizer-wrapper">
-      <div>Factions to Include</div>
-      <div className="house-inputs-wrapper">
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeAtreides} onChange={() => setIncludeAtreides(!includeAtreides)}></input><label>House Atreides</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeHarkonnen} onChange={() => setIncludeHarkonnen(!includeHarkonnen)}></input><label>House Harkonnen</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeBeneGesserit} onChange={() => setIncludeBeneGesserit(!includeBeneGesserit)}></input><label>Bene Gesserit</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeFremen} onChange={() => setIncludeFremen(!includeFremen)}></input><label>Fremen</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeEmperor} onChange={() => setIncludeEmperor(!includeEmperor)}></input><label>Emperor</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeSpacingGuild} onChange={() => setIncludeSpacingGuild(!includeSpacingGuild)}></input><label>Spacing Guild</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeIxian} onChange={() => setIncludeIxian(!includeIxian)}></input><label>Ixian</label>  </div>
-        <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeTleilaxu} onChange={() => setIncludeTleilaxu(!includeTleilaxu)}></input><label>Tleilaxu</label></div>
+      <div className="card-container">
+      <div className="card-header">Factions to Include</div>
+        <div className="house-inputs-wrapper">
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeAtreides} onChange={() => setIncludeAtreides(!includeAtreides)}></input><label>House Atreides</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeHarkonnen} onChange={() => setIncludeHarkonnen(!includeHarkonnen)}></input><label>House Harkonnen</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeBeneGesserit} onChange={() => setIncludeBeneGesserit(!includeBeneGesserit)}></input><label>Bene Gesserit</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeFremen} onChange={() => setIncludeFremen(!includeFremen)}></input><label>Fremen</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeEmperor} onChange={() => setIncludeEmperor(!includeEmperor)}></input><label>Emperor</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeSpacingGuild} onChange={() => setIncludeSpacingGuild(!includeSpacingGuild)}></input><label>Spacing Guild</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeIxian} onChange={() => setIncludeIxian(!includeIxian)}></input><label>Ixian</label>  </div>
+          <div className="faction-checkbox"><input type="checkbox" value="beneGesserit" checked={includeTleilaxu} onChange={() => setIncludeTleilaxu(!includeTleilaxu)}></input><label>Tleilaxu</label></div>
+        </div>
       </div>
-      <div className="player-name-wrapper">
-        <div>Player Names</div>
+      <div className="card-container">
+        <div className="card-header">Player Names</div>
         <div className="name-inputs-wrapper">
         <input className="player-input" value={firstPlayerName} type="text" onChange={event => setFirstPlayerName(event.target.value)}/>
         <input className="player-input" value={secondPlayerName} type="text" onChange={event => setSecondPlayerName(event.target.value)}/>
@@ -92,7 +94,7 @@ const Randomizer = ({enableCheatCode}) => {
         </div>
       </div>
       
-      <button onClick={() => shufflePlayers()}>Shuffle</button>
+      <button class="shuffle-button" onClick={() => shufflePlayers()}>Shuffle</button>
       { hasShuffled 
       ? 
       <>
