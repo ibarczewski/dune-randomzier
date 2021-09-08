@@ -1,21 +1,24 @@
 import "./App.css";
 import { Randomizer } from './Randomizer';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Reference } from "./Reference";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory, useRouteMatch, withRouter } from "react-router-dom";
+import Reference from "./Reference";
+import Navigator from "./Navigator";
 import { useState } from 'react';
 
 function App() {
+  const history = useHistory();
   const [cheatCodeCount, setCheatCodeCount] = useState(0);
+
+  const changeRoute = (event) => {
+    history.push(`${event.target.value}`);
+  }
 
   return (
     <div className="App">
       <header onClick={() => { setCheatCodeCount(cheatCodeCount + 1); console.log(cheatCodeCount + 1);}}>Dune Randomizer</header>
 
       <Router>
-        <div className="link-wrapper">
-          <Link to="/">Randomizer</Link>
-          <Link to="/reference">Reference</Link>
-        </div>
+        <Navigator />
         <Switch>
           <Route path='/reference' >
             <Reference />
