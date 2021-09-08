@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link, useHistory, useRouteMatch, withRouter } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 
 const Navigator = () => {
     const history = useHistory();

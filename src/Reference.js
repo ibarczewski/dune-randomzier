@@ -1,14 +1,13 @@
 import { FremenLocations } from "./FremenLocations";
 import { Leaders } from "./Leaders";
 import { StormRandomizer } from "./StormRandomizer"
-import { BrowserRouter as Router, Switch, Route, Link, useHistory, useRouteMatch, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory, withRouter } from "react-router-dom";
 
 import { useState } from 'react';
 
 const Reference = () => {
   const [selectedValue, setSelectedValue] = useState('leaders');
   const history = useHistory();
-  const match = useRouteMatch();
 
   const handleChange = (value) => {
     setSelectedValue(value);

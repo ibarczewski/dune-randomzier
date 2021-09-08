@@ -1,17 +1,12 @@
 import "./App.css";
 import { Randomizer } from './Randomizer';
-import { BrowserRouter as Router, Switch, Route, Link, useHistory, useRouteMatch, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Reference from "./Reference";
 import Navigator from "./Navigator";
 import { useState } from 'react';
 
 function App() {
-  const history = useHistory();
   const [cheatCodeCount, setCheatCodeCount] = useState(0);
-
-  const changeRoute = (event) => {
-    history.push(`${event.target.value}`);
-  }
 
   return (
     <div className="App">
