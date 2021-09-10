@@ -10,6 +10,7 @@ const Navigator = () => {
     return <select onChange={(event) => changeRoute(event)}>
         <option value="/">Randomizer</option>
         <option value="/reference">Reference</option>
+        <option value="/resolver">Battle Resolver</option>
     </select>
 }
 

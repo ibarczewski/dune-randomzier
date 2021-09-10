@@ -3,6 +3,7 @@ import { Randomizer } from './Randomizer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Reference from "./Reference";
 import Navigator from "./Navigator";
+import Resolver from "./Resolver";
 import { useState } from 'react';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path='/reference' >
             <Reference />
+          </Route>
+          <Route path='/resolver' >
+            <Resolver />
           </Route>
           <Route path='/' >
             <Randomizer enableCheatCode={cheatCodeCount >= 6 ? true : false} />
